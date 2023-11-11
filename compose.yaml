@@ -1,0 +1,15 @@
+services:
+    grpc:
+        image: grpc-test
+        build:
+            dockerfile: Dockerfile.grpctest
+            context: .
+        ports:
+            - 8000:8000
+    streaming:
+        image: streaming
+        build: 
+            dockerfile: Dockerfile.streaming
+            context: .
+        ports:
+            - 8001:8000

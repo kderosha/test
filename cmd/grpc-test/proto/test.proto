@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package proto;
+option go_package="./test;test";
+message Test{
+    int64 message = 2;
+}
+
+service Tester {
+    rpc SayHello(Test) returns (stream Test) {}
+}
