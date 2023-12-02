@@ -27,7 +27,7 @@ func StreamHandler(response http.ResponseWriter, request *http.Request){
 	response.WriteHeader(http.StatusOK)
 	fmt.Fprintf(response, "{\"numbers\": [")
 	fmt.Fprintf(response, "%d", 1)
-	for i := 1; i < 1000000000; i++ {
+	for i := 2; i < 1000000000; i++ {
 		fmt.Fprintf(response, ",%d", i)
 	}
 	fmt.Fprintf(response, "]}")
