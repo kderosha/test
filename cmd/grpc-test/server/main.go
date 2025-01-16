@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"log/slog"
 	"net"
 	"time"
 
@@ -28,6 +29,7 @@ func main() {
 }
 
 func (ts *testServer) SayHello(request *test.Test, returnStream test.Tester_SayHelloServer) error {
+	slog.Info("Saying hello from grpc service")
 	ctx, cancelFunc := context.WithTimeout(returnStream.Context(), time.Second*10)
 	defer cancelFunc()
 	// Return
